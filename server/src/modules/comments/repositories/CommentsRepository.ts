@@ -10,9 +10,10 @@ export class CommentsRepository implements ICommentsReposity {
     this.ormRepository = getRepository(Comment)
   }
 
-  async create({ text }: ICreateCommentDTO): Promise<Comment> {
+  async create({ text, audio }: ICreateCommentDTO): Promise<Comment> {
     const comment = this.ormRepository.create({
-      text
+      text,
+      audio
     })
 
     await this.ormRepository.save(comment)

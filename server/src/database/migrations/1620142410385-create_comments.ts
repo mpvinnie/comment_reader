@@ -16,6 +16,10 @@ export class createComments1620142410385 implements MigrationInterface {
             type: 'varchar'
           },
           {
+            name: 'audio',
+            type: 'varchar'
+          },
+          {
             name: 'created_at',
             type: 'timestamp',
             default: 'now()'

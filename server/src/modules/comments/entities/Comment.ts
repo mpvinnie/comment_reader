@@ -8,6 +8,9 @@ export class Comment {
   @Column()
   text: string
 
+  @Column()
+  audio: string
+
   @CreateDateColumn()
   created_at: Date
 }
