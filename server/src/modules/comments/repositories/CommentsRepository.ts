@@ -19,4 +19,8 @@ export class CommentsRepository implements ICommentsReposity {
 
     return comment
   }
+
+  async findAll(): Promise<Comment[]> {
+    return await this.ormRepository.find()
+  }
 }
