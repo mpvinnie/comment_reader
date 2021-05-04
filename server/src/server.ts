@@ -1,14 +1,15 @@
 import express from 'express'
 
 import './database'
+import { routes } from './routes'
+
+import './containers'
 
 const app = express()
 
 app.use(express.json())
 
-app.get('/', (request, response) => {
-  return response.json({ running: true})
-})
+app.use(routes)
 
 app.listen(3333, () => {
   console.log('Server running on port 3333!')
