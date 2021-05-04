@@ -21,6 +21,8 @@ export class CommentsRepository implements ICommentsReposity {
   }
 
   async findAll(): Promise<Comment[]> {
-    return await this.ormRepository.find()
+    return await this.ormRepository.find({
+      order: { created_at: 'DESC' }
+    })
   }
 }
