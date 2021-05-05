@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import ReactLoading from 'react-loading'
 import { api } from '../../services/api'
 import styles from './styles.module.scss'
@@ -10,7 +10,6 @@ type Comment = {
 }
 
 export function Comments() {
-  const audioRef = useRef<HTMLAudioElement>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [comment, setComment] = useState<string>()
   const [comments, setComments] = useState<Comment[]>([])
@@ -36,8 +35,8 @@ export function Comments() {
     event.target.value = ''
   }, [comment])
 
-  const handlePlayAudio = useCallback(() => {
-    audioRef.current?.play()
+  const handlePlayAudio = useCallback((url: string) => {
+    new Audio(url).play()
   }, [])
 
   return (
@@ -70,11 +69,10 @@ export function Comments() {
         <h3>Comentários</h3>
         {comments.map(comment => (
           <div key={comment.id}>
-          <audio src={comment.audio_url} ref={audioRef} />
           <p>{comment.text}
           </p>
           <button
-            onClick={handlePlayAudio}
+            onClick={() => handlePlayAudio(comment.audio_url)}
             type="button"
           >
             Ouvir
