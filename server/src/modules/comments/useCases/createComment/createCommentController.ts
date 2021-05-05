@@ -1,3 +1,4 @@
+import { classToClass } from "class-transformer";
 import { Request, Response } from "express";
 import { container } from "tsyringe";
 import { CreateCommentUseCase } from "./createCommentUseCase";
@@ -12,6 +13,6 @@ export class CreateCommentController {
       text
     })
 
-    return response.status(201).json(comment)
+    return response.status(201).json(classToClass(comment))
   }
 }
