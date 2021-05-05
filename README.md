@@ -1,5 +1,5 @@
 <h1 align="center">
-  Comments Reader
+  Comment Reader
 </h1>
 
 Comment Reader é uma aplicação que permite a criação de comentários e a leitura do comentário por voz. Desenvolvido utlizando [React.Js](https://pt-br.reactjs.org/) e [NodeJS](https://nodejs.org/en/) na linguagem [Typescript](https://www.typescriptlang.org/).
