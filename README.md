@@ -102,7 +102,7 @@ $ npm install
 $ npm start
 ```
 
-Renomeie o arquivo `.env.example` to `.env` que está em `server` e adicione suas credenciais de acesso à API do [IBM Watson](https://cloud.ibm.com/docs/watson?topic=watson-iam) mensionado no pré-requsito.
+Renomeie o arquivo `.env.example` to `.env` que está em `server` e adicione suas credenciais de acesso à API do [IBM Watson](https://cloud.ibm.com/docs/watson?topic=watson-iam) mencionado no pré-requsito.
 
 Isso é tudo! =)
 
